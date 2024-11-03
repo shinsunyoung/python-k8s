@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ping
+  namespace: default
+  labels:
+    devops.app: ping
+spec:
+  containers:
+    - image: python-test
+      imagePullPolicy: IfNotPresent
+      name: ping
+      ports:
+        - containerPort: 8000
+          name: ping
+          protocol: TCP
+      env:
+        - name: HOSTNAME
+          value: ping
+
