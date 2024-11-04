@@ -22,7 +22,7 @@ helm upgrade --install ingress-nginx ingress-nginx \
   --namespace ingress-nginx --create-namespace
 ```
 
-### Running python
+### Running fastapi app
 ```
 # cd to git clone path
 python3 -m venv .

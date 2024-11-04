@@ -15,4 +15,11 @@ spec:
             service:
               name: external-ping
               port:
-                name: ping
+                number: 8080
+        - path: /name
+          pathType: Prefix
+          backend:
+            service:
+              name: external-ping
+              port:
+                number: 8080

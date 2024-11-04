@@ -11,7 +11,7 @@ spec:
       port: 8080
       name: ping
       targetPort: ping # 8000
-#      nodePort: 30001
+      # nodePort: 30001
   # type: NodePort
   type: ClusterIP
   # type: LoadBalancer -> https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/guide/service/nlb/
