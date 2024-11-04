@@ -9,3 +9,10 @@
 ## Commands
 ### check LISTEN ports on Mac
 `sudo lsof -i -P | grep LISTEN `
+
+### Install nginx ingress controller
+```
+helm upgrade --install ingress-nginx ingress-nginx \
+  --repo https://kubernetes.github.io/ingress-nginx \
+  --namespace ingress-nginx --create-namespace
+```
