@@ -1,11 +1,4 @@
-__pycache__
-bin
-include
-lib
-pyvenv.cfg
-
-
-# General
-.DS_Store
-.AppleDouble
-.LSOverride
+# Created by venv; see https://docs.python.org/3/library/venv.html
+*
+!note
+!note/**
