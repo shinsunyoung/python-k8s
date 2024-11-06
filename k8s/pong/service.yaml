@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pong
+  namespace: default
+spec:
+  selector:
+    devops.app: pong
+  ports:
+    - protocol: TCP
+      port: 8080
+      name: ping
+      targetPort: pong
+      # nodePort: 30002
+  # type: NodePort
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-pong
+  namespace: ingress-nginx
+spec:
+  type: ExternalName
+  externalName: pong.default.svc.cluster.local
