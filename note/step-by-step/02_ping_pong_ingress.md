@@ -52,7 +52,7 @@ $ curl test.my.local/ping
 
 pong 응답이 오는 것을 확인할 수 있다.
 
-![](02.png)
+![](img/02.png)
 
 지금까지 한 내용을 정리하면,
 1. Client 에서 curl 요청으로 `test.my.local/ping` 를 보낸다.
