@@ -18,7 +18,9 @@ helm upgrade --install ingress-nginx ingress-nginx \
   --repo https://kubernetes.github.io/ingress-nginx \
   --namespace ingress-nginx --create-namespace
 ```
-    
+
+이렇게 설치하면 `ingress-nginx` 네임스페이스가 생기게 되고, nginx ingress에 대한 Deployment, Pod, Service가 생성된다.
+
 ```
 apiVersion: networking.k8s.io/v1
 kind: Ingress

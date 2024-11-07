@@ -34,9 +34,32 @@ nodePort: 30001
   - AWS의 경우에는 NLB로 뜨게됨
 
 
-  
+### 4. External Name
+- 서비스를 externalName 필드에 매핑함 
+- 외부에서 접근하기 위한 서비스 종류가 아닌, 내부 파드가 외부의 특정 FQDN에 쉽게 접근하기 위한 서비스
+  - FQDN(Fully Qualified Domain Name): 호스트 이름 + 도메인을 포함한 전체 도메인 이름
+
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-ping
+  namespace: ingress-nginx
+spec:
+  type: ExternalName
+  externalName: ping.default.svc.cluster.local
+```
+
+이렇게 설정되어 있으면 ingress-nginx 네임 스페이스의 external-ping 서비스는 ping.default.svc.cluster.local에 매핑한다는 것임
+* 여기에서 ping.default.svc.cluster.local 은 `서비스이름.네임스페이스이름.타입.DNS이름`이다. 
+* ping(서비스이름).default(네임스페이스이름).svc(타입).cluster.local(DNS이름)
+
 
 ---
 
 
+
+
 ref. https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
+ref. https://kubernetes.io/ko/docs/concepts/services-networking/service/#externalname
