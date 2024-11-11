@@ -9,17 +9,28 @@ spec:
     - host: test.my.local
       http:
         paths:
-        - path: /ping
-          pathType: Prefix
-          backend:
-            service:
-              name: external-ping
-              port:
-                number: 8080
-        - path: /name
-          pathType: Prefix
-          backend:
-            service:
-              name: external-ping
-              port:
-                number: 8080
+          - path: /ping
+            pathType: Prefix
+            backend:
+              service:
+                name: external-ping
+                port:
+                  number: 8080
+          - path: /name
+            pathType: Prefix
+            backend:
+              service:
+                name: external-ping
+                port:
+                  number: 8080
+
+    - host: test.my.local2
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: external-pong
+                port:
+                  number: 8080
