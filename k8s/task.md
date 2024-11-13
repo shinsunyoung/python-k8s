@@ -3,7 +3,7 @@
 * []Deploy pong pod and service using custom `selector`
 * []Set ingress route to each application
 * []Test nodeport
-
+* []Active pong linkerd proxy
 
 
 ## Commands
@@ -21,6 +21,12 @@ helm upgrade --install ingress-nginx ingress-nginx \
   --repo https://kubernetes.github.io/ingress-nginx \
   --namespace ingress-nginx --create-namespace
 ```
+
+### Check linkerd dashboard pid
+```sh
+ps -ef | grep dashboard
+```
+
 
 ### Running fastapi app
 ```
