@@ -1,0 +1,6 @@
+namespaceOverride: ingress-nginx
+controller:
+  podAnnotations:
+    linkerd.io/inject: enabled
+  ingressClassResource:
+    default: true

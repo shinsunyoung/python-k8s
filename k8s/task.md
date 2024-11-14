@@ -5,7 +5,7 @@
   * 어떻게 하면 ingress에서 모든 경로를 핸들링 할 수 있을지
   * host 이름 따라서 응답?
 * [x] Test node port
-
+* []Active pong linkerd proxy
 
 
 ## Commands
@@ -23,6 +23,12 @@ helm upgrade --install ingress-nginx ingress-nginx \
   --repo https://kubernetes.github.io/ingress-nginx \
   --namespace ingress-nginx --create-namespace
 ```
+
+### Check linkerd dashboard pid
+```sh
+ps -ef | grep dashboard
+```
+
 
 ### Running fastapi app
 ```

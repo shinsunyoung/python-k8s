@@ -6,23 +6,16 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: test.my.local
+    - host: test.emoji
       http:
         paths:
-          - path: /ping
-            pathType: Prefix
-            backend:
-              service:
-                name: external-ping
-                port:
-                  number: 8080
-          - path: /name
-            pathType: Prefix
-            backend:
-              service:
-                name: external-ping
-                port:
-                  number: 8080
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: web-svc
+              port:
+                number: 80
 
     - host: test.my.local2
       http:
